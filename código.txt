@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cofre de Imagens</title>
+    <style>
+        body {
+            background: url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-large-gold-door-of-a-vault-is-shown-image_2628928.jpg');
+            background-size: cover;
+        }
+        #cofre {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        #imagem {
+            display: none;
+            margin-top: 20px;
+        }
+        #aviso {
+            color: red;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cofre">
+        <h1>Cofre de Imagens</h1>
+        <input type="text" id="senha" placeholder="Digite a senha">
+        <button onclick="verificarSenha()">Abrir</button>
+        <p id="aviso">Senha incorreta!</p>
+        <img id="imagem" src="" alt="Imagem do cofre">
+    </div>
+
+    <script>
+        function verificarSenha() {
+            var senha = document.getElementById('senha').value;
+            var imagem = document.getElementById('imagem');
+            switch(senha) {
+                case 'Plane Jane':
+                    imagem.src = 'https://www.gaytimes.co.uk/wp-content/uploads/2024/03/Drag-Race-Plane-Jane-Season-16.jpg';
+                    break;
+                case 'Nymphia Wind':
+                    imagem.src = 'https://m.media-amazon.com/images/M/MV5BYzNlYTExMTAtZDBiMC00YTM4LTg3NWEtZjIwOGJmYmQzZTY3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg';
+                    break;
+                // adicione mais senhas e imagens conforme necessário
+                default:
+                    imagem.src = '';
+            }
+            imagem.style.display = imagem.src ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
